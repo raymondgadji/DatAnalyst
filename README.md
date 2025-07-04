@@ -1,4 +1,6 @@
-This README file is the memento of the folder
+This README file is the folder for my data analyst course at Simplon Montreuil in July, August, September and October 2025
+
+Below are some examples of the language "Markdown"
 # Markdown syntax guide
 
 ## Headers
