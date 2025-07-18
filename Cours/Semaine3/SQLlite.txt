@@ -1,0 +1,28 @@
+SQL lite est intégré à python
+
+#Les requêtes
+select* from ARTISTES;
+-- Recherchez tous les artistes du genre "Pop"
+select * from Artistes where Genre = "Pop";
+-- Obtenez la liste des albums sortis en 1984
+select* from Albums where année_de_sortie = 1984;
+-- Trouvez toutes les chansons de l’album d’id 6
+select from chansons;
+select from Chansons where album_ID = 6;
+-- Recherchez toutes les chansons dont la durée est supérieure à 4 minutes
+select* from Chansons where Durée > "4:00";
+-- Listez les artistes par ordre alphabétique de leur nom
+select* from Artistes order by Nom asc;
+-- Recherchez les artistes dont le nom commence par "M"
+select* from Artistes where Nom like 'M%';
+selectfrom Artistes;
+-- Affichez les artistes qui ont commencé leur carrière entre 1990 et 2023
+select from Artistes where Année_de_début between 1990 and 2023;
+-- Sélectionnez les artistes de genre "Pop" ou "Rock"
+select* from Artistes where genre = "pop" or genre = "rock";
+-- Retrouvez les artistes de genre "pop" qui ont commencé leur carrière après 1990
+select* from Artistes where genre = "pop" and Année_de_début < 1990;
+-- Affichez les artistes qui sont soit de genre "Reggae" soit de genre "Rock"
+select* from Artistes where genre = "Reggae" or genre = "Rock";
+
+select * from artistes where 1990 < debut_annee < 2023 ;

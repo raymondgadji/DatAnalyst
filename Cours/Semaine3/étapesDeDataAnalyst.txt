@@ -1,0 +1,8 @@
+=> csv / BDD / API / web scraping ... (données brutes) 
+=> Pre processing (data cleaning)
+=> Stockage des données clean sur une BDD  
+=> Analyse réelle 
+(interpreter les données pour prendre des décisions via visualisation par exemple :
+	top 10 des produits les plus vendus? 
+	top 10 des clients sur tel produit? 
+	Visualisation => Histogramme, pie chart ...)
