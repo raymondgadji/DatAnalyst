@@ -1,0 +1,15 @@
+Relations (corrélation) entre deux variables par ex l'âge et les ventes sont liées ? 
+moins jeunes ? plus jeunes ? 
+à montrer sur la viz
+Comparaisons ? 
+Distribution => Je prends une variable numérique (analyse univarée)
+et je l'éclate pour voir son contenu => je veux voir tous les prix ? nbre de buts par joueur ? par équipe ? par saison ?
+
+
+Composition => j'ai trois catégories mais je ne sais pas (si j'ai une notion de temps, on veux voir entre le mois tel et le mois tel?)
+quelle sont les catégories qui constituent le plus mon stock ? => son total construit mon stock global
+taux femme et homme dans une entreprise ? comment se repartie le chiffre d'affaires entre les catégories qui se vendent ? 
+Proportion entre les joueurs de ligue 1 et premier league dans une équipe nationale ? => pie chart  par? proportion?
+
+Comparaison = > J'ai cinq équipes et je compare le nbre de buts par équipes? 
+le nbre de cartons jaunes et rouges ? la vitesse pour les actions ?...
