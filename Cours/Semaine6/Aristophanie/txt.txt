@@ -1,0 +1,43 @@
+# Création d'une fonction inventoriant les livres dans chaque catégorie:
+def bookincat(caturl):
+    books = []
+
+    response = requests.get(caturl)
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, "html.parser")
+        # Détecte le nombre de pages (ou 1 si aucune pagination)
+        try:
+            nbre_pages = int(soup.find("li", class_="current").get_text().split()[-1])
+        except AttributeError:
+            nbre_pages = 1
+
+        # Nettoie l'URL pour construire les pages suivantes
+        base_url = caturl.replace("index.html", "")
+        cat_name = soup.select_one("div.page-header h1").text.strip()
+
+        # Parcours de toutes les pages de la catégorie
+        for i in range(nbre_pages):
+            if i == 0:
+                url = caturl
+            else:
+                url = f"{base_url}page-{i+1}.html"
+
+            response = requests.get(url)
+            soup = BeautifulSoup(response.text, "html.parser")
+
+            livres = soup.find_all('article', {'class': 'product_pod'})
+            for livre in livres:
+
+                titre = livre.h3.a["title"]
+
+                rating = livre.find("p", class_="star-rating")["class"][1]
+
+                prix = livre.find("p", class_="price_color").text.strip().replace("Â£", "")
+
+                disponibilite = livre.find("p", class_="instock availability").text.strip()
+
+                books.append({"title": titre, "catégorie": cat_name, "avis": rating, "prix": prix, "disponibilité": disponibilite})
+
+    # Création du DataFrame
+    df_boca = pd.DataFrame(books)
+    return df_boca
