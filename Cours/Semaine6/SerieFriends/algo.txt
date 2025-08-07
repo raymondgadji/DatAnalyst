@@ -1,0 +1,48 @@
+WHAT
+
+num de la saison + le numéro de l'épisode (S1.E1)
+le titre de l'épisode (The One where Monica ...)
+jour de première diffusion (mardi 16 avril 1996)
+description (Monica and the gang introduce Rachel ...)
+Rating (8.5)  
+combien de commentateurs (11k)
+Avoir un dataframe (pd.DataFrame) contenant toutes ces infos
+
+HOW
+
+all_episode_info = soup.find ('article', class_='sc-64257d69-1 mOJzu episode-item-wrapper')
+
+for h4 in soup.find_all('h4'):
+    print (h4.text)
+soup.find('article', class_='sc-64257d69-1 mOJzu episode-item-wrapper')
+    
+soup.all_episode_info.h4 (pour avoir tous les titres des épisodes)
+soup.all_episode_info.find.h4 (pour avoir tous les titres des épisodes)
+soup.all_episode_info.find_all('h4') (pour avoir tous les titres des épisodes)
+soup.all_episode_info.select.h4 (pour avoir tous les titres des épisodes)
+
+soup.all_episode_info.date (pour avoir tous les jours premières diffusion des épisodes)
+soup.all_episode_info.find.date (pour avoir tous les jours premières diffusion des épisodes)
+soup.all_episode_info.find_all.date (pour avoir tous les jours premières diffusion des épisodes)
+soup.all_episode_info.select.date (pour avoir tous les jours premières diffusion des épisodes)
+
+soup.all_episode_info.description (pour avoir toutes les descriptions des épisodes)
+soup.all_episode_info.find.description (pour avoir toutes les descriptions des épisodes)
+soup.all_episode_info.find_all.description (pour avoir toutes les descriptions des épisodes)
+soup.all_episode_info.select.description (pour avoir toutes les descriptions des épisodes)
+
+soup.all_episode_info.rating (pour avoir toutes les notes des épisodes)
+soup.all_episode_info.find.rating (pour avoir toutes les notes des épisodes)
+soup.all_episode_info.find_all.rating (pour avoir toutes les notes des épisodes)
+soup.all_episode_info.select.rating (pour avoir toutes les notes des épisodes)
+
+soup.all_episode_info.howMany (pour avoir ont commenté les épisodes)
+soup.all_episode_info.find.howMany (pour avoir ont commenté les épisodes)
+soup.all_episode_info.find_all.howMany (pour avoir ont commenté les épisodes)
+soup.all_episode_info.select.howMany (pour avoir ont commenté les épisodes)
+
+pd.DataFrame
+df_to_csv('name_of_csv')
+
+
+

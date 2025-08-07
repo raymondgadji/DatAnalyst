@@ -1,0 +1,20 @@
+episodes = []
+for a in soup.select("article.episode-item-wrapper"):
+    
+    titre_brut = a.select_one("div.ipc-title__text.ipc-title__text--reduced").text.strip()
+    match = re.search(r"(S\d+)\.(\s*E\d+)\s*∙\s*(.*)", titre_brut) 
+    saison = match.group(1).strip()
+    numero = match.group(2).strip()
+    titre = match.group(3).strip()
+    
+    description = a.select_one("div.ipc-html-content-inner-div").text.strip()
+
+    date = a.select_one("div.sc-5372d523-5.jBUStp span").text.strip()
+
+    note = a.select_one("span.ipc-rating-star--rating").text.strip()
+
+    nbre_votants = a.select_one("span.ipc-rating-star--voteCount").text.strip()
+
+    episodes.append({'titre': titre, "saison": saison, "épisode": numero, "résumé": description, "date de diffusion": date, 'note': note, "nombre de votants": nbre_votants})
+df_saison1 = pd.DataFrame(episodes)
+df_saison1.head(10)
