@@ -10,13 +10,14 @@ Avoir un dataframe (pd.DataFrame) contenant toutes ces infos
 
 HOW
 
-all_episode_info = soup.find ('article', class_='sc-64257d69-1 mOJzu episode-item-wrapper')
+soup.find('div', class_='sc-5372d523-4 bwWORs')
+all_episode_info = soup.find ('article', class_='sc-5372d523-4 bwWORs')
 
 for h4 in soup.find_all('h4'):
     print (h4.text)
-soup.find('article', class_='sc-64257d69-1 mOJzu episode-item-wrapper')
+
     
-soup.all_episode_info.h4 (pour avoir tous les titres des épisodes)
+soup.all_episode_info('h4') (pour avoir tous les titres des épisodes)
 soup.all_episode_info.find.h4 (pour avoir tous les titres des épisodes)
 soup.all_episode_info.find_all('h4') (pour avoir tous les titres des épisodes)
 soup.all_episode_info.select.h4 (pour avoir tous les titres des épisodes)
