@@ -1,0 +1,49 @@
+Dominga
+--- Modifier un utilisateur ---
+@app.get("/update-user/{user_id}/{nom}/{email}")
+async def update_user(user_id: int, nom: str , email: str):
+    conn = sqlite3.connect("simple_users.db")
+    cur = conn.cursor()
+    cur.execute("UPDATE users SET nom = ?, email = ? WHERE id = ?", (nom, email, user_id))
+    conn.commit()
+    conn.close()
+    return {"message": f"Utilisateur {user_id} mis à jour."}
+
+
+Xavier
+# --- Page de modification ---
+@app.get("/update/{user_id}", response_class=HTMLResponse)
+def formulaire_update(user_id: int):
+    # Charger l’utilisateur existant
+    conn = sqlite3.connect("simple_users.db")
+    cur = conn.cursor()
+    cur.execute("SELECT nom, email FROM users WHERE id = ?", (user_id,))
+    row = cur.fetchone()
+    conn.close()
+    if not row:
+        return HTMLResponse(f"<p>Utilisateur {user_id} introuvable.</p><a href='/users'>Retour</a>")
+
+    nom, email = row
+    return f"""
+    <h2 style="color: #ff6600; font-family: Arial, sans-serif; text-align: center; text-transform: uppercase;">Modifier l'utilisateur {user_id}</h2>
+    <form action="/update_user/{user_id}" method="post" style="max-width:350px; margin:20px auto; padding:15px; border:1px solid #ccc; border-radius:10px; background:#f0f0f0; font-family:Arial;">
+      <label>Nom :</label>
+      <input type="text" name="nom" value="{nom}" style="width:100%; padding:8px; margin-bottom:15px; border:1px solid #bbb; border-radius:6px;">
+      <label>Email :</label>
+      <input type="email" name="email" value="{email}" style="width:100%; padding:8px; margin-bottom:15px; border:1px solid #bbb; border-radius:6px;">
+      <input type="submit" value="Mettre à jour" style="width:100%; background:#27ae60; color:white; padding:10px; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">
+    </form>
+    """
+
+# --- Endpoint de modification ---
+@app.post("/update_user/{user_id}")
+def update_user(user_id: int, nom: str = Form(...), email: str = Form(...)):
+    conn = sqlite3.connect("simple_users.db")
+    cur = conn.cursor()
+    cur.execute("UPDATE users SET nom = ?, email = ? WHERE id = ?", (nom, email, user_id))
+    conn.commit()
+    updated = cur.rowcount
+    conn.close()
+    if updated == 0:
+        return {"message": f"Aucun utilisateur avec id={user_id}."}
+    return {"message": f"Utilisateur {user_id} modifié."}
