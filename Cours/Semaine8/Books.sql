@@ -1,1 +1,2 @@
-SELECT * FROM books.ratings;
+USE books;
+SELECT * FROM books;
