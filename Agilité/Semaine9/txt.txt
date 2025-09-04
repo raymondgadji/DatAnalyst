@@ -1,0 +1,48 @@
+existe t il des entreprises qui propose aux municipalités, 
+aux gouvernements des statistiques, 
+des dashboards en rapport direct avec l'ODD 11 : Villes et communautés durables ?
+
+Oui, il existe plusieurs entreprises qui proposent aux municipalités et aux gouvernements des statistiques, 
+des tableaux de bord (dashboards) et des outils analytiques directement liés à l'ODD 11 des Nations Unies, 
+qui vise à rendre les villes et les communautés inclusives, sûres, résilientes et durables. Ces entreprises, 
+souvent issues des secteurs de la technologie, du conseil et des données géospatiales, 
+offrent des solutions pour monitorer les indicateurs de l'ODD 11, tels que la consommation de terres, 
+l'accès aux transports publics, la réduction des émissions de gaz à effet de serre, 
+ou encore la planification urbaine durable. Voici quelques exemples notables :
+
+Esri : Cette entreprise spécialisée en systèmes d'information géographique (SIG) 
+fournit des outils comme ArcGIS, qui permettent de créer des dashboards pour suivre les indicateurs de l'ODD 11, 
+tels que le ratio de consommation de terres par rapport à la croissance démographique (indicateur 11.3.1). 
+Esri collabore avec des gouvernements et municipalités pour des analyses spatiales, 
+des visualisations de données et des kits d'observation de la Terre, en partenariat avec l'ONU-Habitat. 
+Par exemple, ils proposent des leçons éducatives et des toolkits pour classer les zones urbaines et soutenir la planification durable.
+Deloitte : En tant que cabinet de conseil, Deloitte offre des services de conseil en durabilité urbaine, 
+alignés sur l'ODD 11, incluant des dashboards comme la plateforme CitySynergy pour la gestion des opérations urbaines. 
+Ils aident les villes à intégrer l'IA et l'analyse de données pour des tendances comme la planification verte des espaces publics, 
+la réduction des émissions et l'amélioration de l'efficacité énergétique, 
+avec des économies potentielles allant jusqu'à 40 % sur les coûts de collecte des déchets.
+
+Envisio : Cette entreprise propose des logiciels de gestion de performance pour les gouvernements locaux, 
+avec des dashboards publics pour suivre les plans stratégiques, y compris ceux liés à la durabilité et au climat. 
+Par exemple, des villes comme Rockville (Maryland) utilisent leurs outils pour monitorer les plans d'action climatique, 
+en suivant les réductions d'émissions de gaz à effet de serre, ce qui s'aligne directement sur l'ODD 11. 
+
+D'autres exemples incluent des dashboards pour la durabilité gouvernementale et la croissance équitable.
+IBM : IBM développe des solutions basées sur l'IA pour les villes résilientes, 
+en partenariat avec des organisations comme C40 Cities et Sustainable Energy for All. 
+Ils offrent des plateformes de consolidation de données urbaines pour des décisions informées, 
+couvrant la résilience climatique, l'énergie durable et le développement urbain, 
+aidant les gouvernements à aborder les défis de l'ODD 11.
+
+Microsoft : Via sa plateforme CityNext, Microsoft fournit des solutions pour les villes durables, 
+couvrant la gestion de l'énergie, de l'eau, des transports et des bâtiments. 
+Ces outils aident les gouvernements à monitorer et à améliorer la durabilité urbaine, 
+en alignement avec l'ODD 11, en empowerant les décideurs avec des données et des analyses.
+Siemens : Siemens collabore avec des partenaires comme IBM pour des solutions 
+en ingénierie durable et gestion d'actifs, soutenant la traçabilité et la durabilité des produits urbains. 
+Leurs offres incluent des technologies pour les infrastructures intelligentes, 
+contribuant à l'ODD 11 via des rapports de durabilité et des outils pour les villes.
+
+Ces entreprises opèrent souvent via des partenariats avec des organisations internationales 
+comme l'ONU ou des réseaux de villes, et leurs services sont adaptés aux besoins locaux 
+pour mesurer les progrès vers les cibles de l'ODD 11. 
