@@ -1,0 +1,55 @@
+# Vérifier les premières lignes
+print(df_cleaned_file['sales_team_manager'].head())
+
+# Vérifier le nombre de valeurs uniques et leur distribution
+print(df_cleaned_file['sales_team_manager'].value_counts())
+print(f"Nombre de managers uniques : {df_cleaned_file['sales_team_manager'].nunique()}")
+
+# Vérifier s'il y a des valeurs vides ou aberrantes
+print(df_cleaned_file['sales_team_manager'].str.strip().eq('').sum())
+
+# Vérifier la relation avec sales_team pour comprendre "Organic", "Bravo", "Delta"
+print(df_cleaned_file.groupby('sales_team_manager')['sales_team'].value_counts())
+
+# Standardiser les valeurs (supprimer espaces, uniformiser la casse)
+df_cleaned_file['sales_team_manager'] = df_cleaned_file['sales_team_manager'].str.strip().str.title()
+
+# Optionnel : Remplacer les valeurs suspectes par NaN (à confirmer selon votre contexte)
+df_cleaned_file['sales_team_manager'] = df_cleaned_file['sales_team_manager'].replace(['Organic', 'Bravo', 'Delta'], pd.NA)
+
+# Vérifier les valeurs après remplacement
+print(df_cleaned_file['sales_team_manager'].value_counts(dropna=False))
+
+# Convertir en category
+df_cleaned_file['sales_team_manager'] = df_cleaned_file['sales_team_manager'].astype('category')
+
+# Vérifier le nouveau type
+print(df_cleaned_file['sales_team_manager'].dtype)
+
+# Vérifier les lignes où sales_team_manager est "Organic"
+print(df_cleaned_file[df_cleaned_file['sales_team_manager'] == 'Organic'][['sales_team', 'sales_team_manager', 'sales_rep']].head())
+
+# Vérifier les équipes et représentants pour les lignes sans manager
+print(df_cleaned_file[df_cleaned_file['sales_team_manager'].isna()][['sales_team', 'sales_rep']].value_counts())
+# Vérifier les valeurs actuelles
+print(df_cleaned_file['sales_team_manager'].value_counts(dropna=False))
+
+# Restaurer "Organic" (si vous êtes d'accord)
+df_cleaned_file['sales_team_manager'] = df_cleaned_file['sales_team_manager'].cat.add_categories(['Organic']).fillna('Organic')
+
+# Corriger "Bravo" et "Delta" (alternative au remplacement par NaN)
+df_cleaned_file.loc[df_cleaned_file['sales_team'] == 'Bravo', 'sales_team_manager'] = 'Tracy Banks'
+df_cleaned_file.loc[df_cleaned_file['sales_team'] == 'Delta', 'sales_team_manager'] = 'Britanny Bold'
+
+# Standardiser les noms
+df_cleaned_file['sales_team_manager'] = df_cleaned_file['sales_team_manager'].str.strip().str.title()
+
+# Reconvertir en category
+df_cleaned_file['sales_team_manager'] = df_cleaned_file['sales_team_manager'].astype('category')
+
+# Vérifier les valeurs finales
+print(df_cleaned_file['sales_team_manager'].value_counts(dropna=False))
+print(df_cleaned_file['sales_team_manager'].dtype)
+
+df_cleaned_file.info()
+
